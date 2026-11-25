@@ -1,14 +1,18 @@
 # World news, 25 November 2026
 
+[![make.fun · news-image-20261125](https://make.fun/badge/news-image-20261125.svg)](https://make.fun/bounty/news-image-20261125?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
+[![rank](https://make.fun/badge/news-image-20261125/acfauji/news-image-20261125-global-edition/rank.svg)](https://make.fun/bounty/news-image-20261125/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
+[![reward](https://make.fun/badge/news-image-20261125/acfauji/news-image-20261125-global-edition/reward.svg)](https://make.fun/bounty/news-image-20261125?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261125)
+
 An original illustrated news image, with three build-time editorial structures:
 
 - **A — Illustrated broadsheet:** 30 independently verified reports, one lead illustration and two supporting leads.
 - **B — Pictorial cover:** 23 reports around a dominant original editorial centerpiece.
-- **C — Clarity bulletin:** 26 reports, large date, a visual lead, six enlarged regional heads and a compact digest.
+- **C — Clarity bulletin:** 28 reports, large date, a visual lead, six enlarged regional heads and a compact digest.
 
-The committed `entry.png` is the provisional **C** edition: 26 reports across seven regions. Local swapped comparisons left A and C tied; C was selected provisionally for its clearer large regional headlines at a true 300 pixels. This is not a server grade or a claim of competitive rank.
+The committed `entry.png` is the **C — Global Edition**: 28 reports across seven regions, with a balanced three-column, seven-row digest. Local swapped comparisons left A and C tied; C was selected provisionally for its clearer large regional headlines at a true 300 pixels. This is not a server grade or a claim of competitive rank.
 
-The report manifest distinguishes events from attributed claims. It records the qualifying date and source evidence. A provisional edition is not a complete record of the full global day.
+The report manifest distinguishes events from attributed claims. It records the qualifying date and source evidence. This early-day edition is not a complete record of the full global day.
 
 ## Offline execution
 

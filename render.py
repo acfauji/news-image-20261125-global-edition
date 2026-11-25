@@ -139,7 +139,7 @@ def illustration_shapes(c, box, motif, accent=TEAL):
         ell(-.15,.58,1.2,2.1,"#6aa5a0")
         poly([(.02,.91),(.18,.71),(.39,.71),(.5,.82),(.37,.95)],"#b7c6a8")
         poly([(.61,.74),(.81,.72),(.97,.92),(.88,1),(.7,.93)],"#b7c6a8")
-        for a,b in [(.08,.1),(.27,.23),(.85,.12),(.92,.43),(.66,.08),(.1,.5),(.78,.32)]:
+        for a,b in [(.08,.19),(.27,.23),(.85,.12),(.92,.43),(.66,.08),(.1,.5),(.78,.32)]:
             ell(a,b,a+.004,b+.009,PAPER)
         # Four slatted photovoltaic wings, independently positioned modules.
         for a,b,d,e in [(.15,.25,.35,.4),(.15,.52,.35,.67),(.62,.16,.84,.31),(.62,.43,.84,.58)]:
@@ -272,9 +272,9 @@ def card(c, s, x,y,w,h, size=19, illustrated=False):
     c.line([(x,y+h),(x+w,y+h)],RULE,1)
 
 
-def footer(c, count, regions):
+def footer(c, count, regions, edition="PROVISIONAL EDITION"):
     c.line([(24,992),(1000,992)],INK,1)
-    c.text((24,1000),f"{count} DISTINCT REPORTS  /  {regions} REGIONS  /  PROVISIONAL EDITION",10,MUTED,"bold")
+    c.text((24,1000),f"{count} DISTINCT REPORTS  /  {regions} REGIONS  /  {edition}",10,MUTED,"bold")
     c.text((1000,1000),"25.11.2026",10,INK,"bold",anchor="rt")
 
 
@@ -355,7 +355,7 @@ def branch_b(stories, scale):
 
 def branch_c(stories, scale):
     c=Canvas(scale,WHITE)
-    selected=select_stories(stories,26)
+    selected=select_stories(stories,28)
     c.rect((0,0,1024,12),RED)
     label(c,24,28,"THE WORLD / WEDNESDAY",15)
     c.text((24,49),"25 NOVEMBER 2026",53,INK,"bold")
@@ -384,13 +384,14 @@ def branch_c(stories, scale):
     prominent_ids={story["id"] for story in prominent}
     rest=[story for story in selected[1:] if story["id"] not in prominent_ids]
     rows=math.ceil(len(rest)/3)
+    if len(rest)!=21 or rows!=7:raise ValueError("C requires three balanced seven-item digest columns")
     for i,story in enumerate(rest):
         x=24+(i//rows)*332
-        y=640+(i%rows)*49
+        y=630+(i%rows)*51
         label(c,x,y,story["region"],9)
-        c.block((x,y+12),story["headline"],310,16,"bold",leading=1.0,max_lines=2)
-        if i//rows<2:c.line([(x+320,y),(x+320,y+44)],RULE,.7)
-    footer(c,len(selected),len(set(s["region"] for s in selected)))
+        c.block((x,y+11),story["headline"],310,16,"bold",leading=1.02,max_lines=2)
+        if i//rows<2:c.line([(x+320,y),(x+320,y+46)],RULE,.7)
+    footer(c,len(selected),len(set(s["region"] for s in selected)),edition="GLOBAL EDITION")
     return c,selected
 
 
